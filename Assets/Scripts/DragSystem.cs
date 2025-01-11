@@ -4,7 +4,7 @@ public class DragSystem : MonoBehaviour
 {
     /// <summary>
     /// Если касаемся пальцем экрана, то делаем рейкаст в мировую позицию мыши,
-    /// если нашли объект с коллайдером то сохранаем его в поле,
+    /// если нашли объект с интерактивный то сохранаем его в поле,
     /// если перемещаем палец то двигаем объект за пальцем с небольним смещением вниз,
     /// если отпускае палец во время перемещения объекта , то отпускаем объект
     /// </summary>
@@ -47,7 +47,10 @@ public class DragSystem : MonoBehaviour
 
         if (hit.collider != null)
         {
-            _selectedObject = hit.collider.transform;
+            if (hit.collider.CompareTag("Interactable"))
+            {
+                _selectedObject = hit.collider.transform;
+            }
         }
     }
 

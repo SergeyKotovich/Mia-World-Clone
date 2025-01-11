@@ -4,12 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Draggable
+  - Interactable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Draggable
+  - 
   - Water
   - UI
   - 
